@@ -71,7 +71,7 @@ class Movie(models.Model):
     draft = models.BooleanField('Черновик', default=False)
 
     def get_absolute_url(self):
-        return reverse('movie_detail', kwargs={"slug": self.url})
+        return reverse('movie:movie_detail', kwargs={"slug": self.url})
 
     def __str__(self):
         return self.title
