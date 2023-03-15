@@ -11,12 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
     <!-- Bootstrap-Core-CSS -->
     <!--/ Style-CSS -->
-    <link
-      rel="stylesheet"
-      href="{% static 'css/style.css' %}"
-      type="text/css"
-      media="all"
-    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
     <!--// Style-CSS -->
     <!-- font-awesome-icons -->
     <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" />
@@ -34,10 +29,8 @@
   </head>
   <body>
     <div id="page" class="page">
-      {% include 'include/header.html' %}
-       {% block content %}
-       {% endblock content %} 
-      {% include 'include/footer.html' %}
+      {% include 'include/header.html' %} {% block content %} {% endblock content %} {% include
+      'include/footer.html' %}
     </div>
   </body>
 </html>
