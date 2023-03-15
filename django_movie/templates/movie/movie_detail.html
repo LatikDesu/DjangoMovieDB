@@ -106,8 +106,8 @@
                 О фильме {{ movie.title }}
             </h3>
             <p>
-                {% for image in movie.movieshots_set.all %}
-                    <img src="{{ image.image.url }}" class="img-movie-shots "
+                {% for image in movie.movie_shots_set.all %}
+                    <img src="{{ image.image.url }}" class="img-movieshots"
                          alt="{{ image.description }}">
                 {% endfor %}
             </p>
