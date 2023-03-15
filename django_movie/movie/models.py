@@ -73,6 +73,9 @@ class Movie(models.Model):
     def get_absolute_url(self):
         return reverse('movie:movie_detail', kwargs={"slug": self.url})
 
+    def get_review(self):
+        return self.reviews_set.filter(parent__isnull=True)
+
     def __str__(self):
         return self.title
 
@@ -122,16 +125,17 @@ class Rating(models.Model):
 
 
 class Reviews(models.Model):
-    email = models.EmailField("Email", max_length=100)
+    email = models.EmailField()
     name = models.CharField("Имя", max_length=100)
-    text = models.TextField("Текст отзыва")
+    text = models.TextField("Сообщение", max_length=5000)
     parent = models.ForeignKey(
-        'self', verbose_name='Родитель', null=True, on_delete=models.SET_NULL, blank=True)
+        'self', verbose_name="Родитель", on_delete=models.SET_NULL, blank=True, null=True
+    )
     movie = models.ForeignKey(
-        Movie, on_delete=models.CASCADE, verbose_name='фильм')
+        Movie, verbose_name="фильм", on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.name} - {self.movie}'
+        return f"{self.name} - {self.movie}"
 
     class Meta:
         verbose_name = "Отзыв"
