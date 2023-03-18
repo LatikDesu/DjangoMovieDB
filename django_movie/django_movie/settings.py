@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'movie',
     'ckeditor',
     'ckeditor_uploader',
+
+    'snowpenguin.django.recaptcha3',
 ]
 
 MIDDLEWARE = [
