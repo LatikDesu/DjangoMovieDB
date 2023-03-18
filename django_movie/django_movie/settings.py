@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
 
     'movie',
+    'contact',
     'ckeditor',
     'ckeditor_uploader',
 

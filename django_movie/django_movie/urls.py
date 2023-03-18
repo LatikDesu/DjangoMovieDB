@@ -23,6 +23,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
     path("", include("movie.urls")),
+    path('contact/', include('contact.urls')),
 ]
 
 
